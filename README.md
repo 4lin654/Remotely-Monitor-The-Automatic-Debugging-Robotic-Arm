@@ -6,7 +6,7 @@ When the Pixetto lens determines that the object is the color of the defect, the
 
 After following the first three steps below, please note that the image from step 4 must come out, otherwise you cannot enter the Pixetto and Adafruit PWM Servo Driver Library
 
-![jpg](sample_1.jpg)<
+![jpg](sample_1.jpg)<br>
 ![png](sample_2.png)
 
 # License
