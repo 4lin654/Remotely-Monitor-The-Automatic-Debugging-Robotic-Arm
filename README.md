@@ -9,7 +9,7 @@ After following the first three steps below, please note that the image from ste
 ![jpg](sample_1.jpg)
 ![png](sample_2.png)
 
-# usage
+# Usage
 #### Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver()
 
 Variable pwm controls the six-axis robotic arm motor
