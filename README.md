@@ -26,7 +26,7 @@ This function can be used to adjust the PWM frequency, which determines how many
 Frequency is important in PWM, since setting the frequency too high with a very small duty cycle can cause problems, since the 'rise time' of the signal (the time it takes to go from 0V to VCC) may be longer than the time the signal is active, and the PWM output will appear smoothed out and may not even reach VCC, potentially causing a number of problems.
 
 #### Arguments
-freq: A number representing the frequency in Hz, between 40 and 1600
+  * freq: A number representing the frequency in Hz, between 40 and 1600
 #### Example
 The following code will set the PWM frequency to 1000Hz:
 ```C++
