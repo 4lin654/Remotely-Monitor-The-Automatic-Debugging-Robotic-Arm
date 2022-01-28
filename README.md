@@ -37,9 +37,9 @@ pwm.setPWMFreq(1000)
 This function sets the start (on) and end (off) of the high segment of the PWM pulse on a specific channel.  You specify the 'tick' value between 0..4095 when the signal will turn on, and when it will turn off.  Channel indicates which of the 16 PWM outputs should be updated with the new values.
 
 #### Arguments
-channel: The channel that should be updated with the new values (0..15)
-on: The tick (between 0..4095) when the signal should transition from low to high
-off:the tick (between 0..4095) when the signal should transition from high to low
+  * channel: The channel that should be updated with the new values (0..15)
+  * on: The tick (between 0..4095) when the signal should transition from low to high
+  * off:the tick (between 0..4095) when the signal should transition from high to low
 #### Example
 The following example will cause channel 15 to start low, go high around 25% into the pulse (tick 1024 out of 4096), transition back to low 75% into the pulse (tick 3072), and remain low for the last 25% of the pulse:
 ```C++
