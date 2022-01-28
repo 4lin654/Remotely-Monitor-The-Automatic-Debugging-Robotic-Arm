@@ -29,7 +29,7 @@ Frequency is important in PWM, since setting the frequency too high with a very 
 freq: A number representing the frequency in Hz, between 40 and 1600
 ##### Example
 The following code will set the PWM frequency to 1000Hz:
-```arduino
+```C++
 pwm.setPWMFreq(1000)
 ```
 
