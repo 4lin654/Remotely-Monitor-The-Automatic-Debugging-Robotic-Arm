@@ -16,7 +16,7 @@ Variable pwm controls the six-axis robotic arm motor
 
 #### Pixetto ss(A0,A1)
 
-Variable ss control the Pixelto lens, where A0 and A1 are RX and TX angles, respectively
+Variable ss control the Pixelto lens, where A0 and A1 are RX and TX pins, respectively
 
 # Methods
 
