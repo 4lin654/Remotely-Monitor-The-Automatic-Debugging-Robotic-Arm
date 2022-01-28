@@ -45,6 +45,16 @@ The following example will cause channel 15 to start low, go high around 25% int
 ```C++
 pwm.setPWM(15, 1024, 3072)
 ```
+##### Using as GPIO
+There's also some special settings for turning the pins fully on or fully off
 
+You can set the pin to be fully on with
+```C++
+pwm.setPWM(pin, 4096, 0);
+```
+You can set the pin to be fully off with
+```C++
+pwm.setPWM(pin, 0, 4096);
+```
 # License
 (c) 2022 Qing Wei Lin. MIT License
