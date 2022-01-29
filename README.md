@@ -9,10 +9,12 @@ After following the first three steps below, please note that the image from ste
 ![jpg](sample_1.jpg)
 ![png](sample_2.png)
 
-# Six-axis robotic arm method
+# Usage
 
 ### Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver()
-Variable pwm controls the six-axis robotic arm moto
+called this way, it uses the default address 0x40
+
+# Method
 
 ### pwm.setPWMFreq(freq)
 #### Description
