@@ -1,21 +1,21 @@
-#include<Pixetto.h>                                        //匯入鏡頭Pixetto函式庫                                
-#include <Adafruit_PWMServoDriver.h>                       //匯入PCA9685驅動程式函式庫
-Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();   // 呼叫伺服驅動程式函數，預設I2C位址為 0x40
+#include<Pixetto.h>                                        // Import the Pixelto library                                
+#include <Adafruit_PWMServoDriver.h>                       // Import the PCA9685 driver library
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();   // Call the servo driver function, the default I2C address is 0x40
 
-#define SERVOMIN  125 // 這是“最小”脈衝長度計數（在4096)
-#define SERVOMAX  575 // 這是“最大”脈衝長度計數（在4096)
+#define SERVOMIN  125                                      // this is the 'minimum' pulse length count (out of 4096)
+#define SERVOMAX  575                                      // this is the 'maximum' pulse length count (out of 4096)
 
-Pixetto ss(A0,A1);                                //定義Pixetto RX、TX腳位
+Pixetto ss(A0,A1);                                         // define Pixetto RX pin、TX pin
 
 void setup()
 {
-  ss.begin();                                     //Pixetto開始辨識
+  ss.begin();                                     
   pwm.begin();
   
-  pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
+  pwm.setPWMFreq(60);                                      // Analog servos run at ~60 Hz updates
   
   Serial.begin(9600);
-  pinMode(4, OUTPUT);                             //運輸帶馬達輸出
+  pinMode(4, OUTPUT);                                      // Conveyor belt motor output
 }
 
 
@@ -24,13 +24,13 @@ void loop()
   if (ss.isDetected()) {
     digitalWrite(4, HIGH);
     Initialize();
-    //28 ~ 32 鏡頭辨識到黑色，運輸帶繼續執行，否則停下
+    //28 ~ 32code The lens recognizes black, and the conveyor belt continues to execute, otherwise it stops
     if (ss.isDetected() == ss.getFuncID() == Pixetto::FUNC_COLOR_DETECTION && ss.getTypeID() == Pixetto::COLOR_BLACK) {
       Serial.println("BLACK");
       digitalWrite(4, HIGH);
       Initialize();
     }
-    //34 ~ 50 鏡頭辨識到紅色，則運輸帶停下
+    //34 ~ 50code The lens recognizes red, and the conveyor belt stops
     if (ss.isDetected() == ss.getFuncID() == Pixetto::FUNC_COLOR_DETECTION && ss.getTypeID() == Pixetto::COLOR_RED) {
       //delay(1 * 1000);
       Serial.println("RED");
@@ -52,14 +52,12 @@ void loop()
 }
 
 int angleToPulse(int ang){
-   int pulse = map(ang,0, 180, SERVOMIN,SERVOMAX);// map angle of 0 to 180 to Servo min and Servo max 
+   int pulse = map(ang,0, 180, SERVOMIN,SERVOMAX);         // map angle of 0 to 180 to Servo min and Servo max 
    return pulse;
 }
 
-//pwm.setPWM(PCA9685腳位, 角度1, 角度2)，角度1會轉到角度2
-//Ex:pwm.setPWM(0, 0, angleToPulse(5))，腳位0，馬達從0轉到5度
-
-void Initialize() {     //機械手臂初始化動作
+// Robotic arm initialization action
+void Initialize() {
   pwm.setPWM(0, 0, angleToPulse(5) );
   pwm.setPWM(1, 0, angleToPulse(50) );
   pwm.setPWM(2, 0, angleToPulse(120) );
@@ -70,7 +68,7 @@ void Initialize() {     //機械手臂初始化動作
 }
 
 
-//往下準備夾
+// Go down and prepare the clip
 void down(){
   pwm.setPWM(0, 0, angleToPulse(5) );
   pwm.setPWM(1, 0, angleToPulse(60) );
@@ -89,7 +87,7 @@ void grap(){
   pwm.setPWM(5, 0, angleToPulse(180) );
 }
 
-//夾完之後往上抬
+// Lift up after clamping
 void up(){
   pwm.setPWM(0, 0, angleToPulse(5) );
   pwm.setPWM(1, 0, angleToPulse(55) );
@@ -100,7 +98,7 @@ void up(){
   delay(500);
 }
 
-//夾完後向前放
+// Place it forward after clamping
 void putup(){
   pwm.setPWM(0, 0, angleToPulse(5) );
   pwm.setPWM(1, 0, angleToPulse(55) );
