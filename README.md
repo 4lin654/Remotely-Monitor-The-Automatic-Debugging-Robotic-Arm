@@ -58,6 +58,15 @@ The following example will cause channel 15 to start low, go high around 25% int
 ```C++
 pwm.setPWM(15, 1024, 3072)
 ```
+#### ss.isDetected()
+Object is detected
+
+#### ss.isDetected() == ss.getFuncID() == Pixetto::FUNC_COLOR_DETECTION && ss.getTypeID() == Pixetto::COLOR_BLACK
+The lens identifies black
+
+#### ss.isDetected() == ss.getFuncID() == Pixetto::FUNC_COLOR_DETECTION && ss.getTypeID() == Pixetto::COLOR_RED
+The lens identifies red
+
 # Further reading
  * [Adafruit PCA9685 16-Channel Servo Driver](https://learn.adafruit.com/16-channel-pwm-servo-driver/library-reference?view=all)
  * [Adafruit-PWM-Servo-Driver-Library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
