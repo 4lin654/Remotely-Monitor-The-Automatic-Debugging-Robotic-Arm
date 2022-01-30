@@ -55,6 +55,6 @@ pwm.setPWM(15, 1024, 3072)
 # Further reading
  * [Adafruit PCA9685 16-Channel Servo Driver](https://learn.adafruit.com/16-channel-pwm-servo-driver/library-reference?view=all)
  * [Adafruit-PWM-Servo-Driver-Library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
- * [VIA_Pixetto](https://learn.pixetto.ai/zh/blog/)
+ * [VIA_Pixetto](https://pixetto.ai/tutorials/)
 # License
 (c) 2022 Qing Wei Lin. MIT License
