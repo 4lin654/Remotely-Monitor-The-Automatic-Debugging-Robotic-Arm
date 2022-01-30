@@ -21,7 +21,7 @@ VIA Pixetto tile：<br>
 <br>Arduino IDE Code：
 ```C++
 #include<Pixetto.h> 
-Pixetto ss(A5,A4);
+Pixetto ss(A5,A4);  //define RX、TX pin
 void setup()
 {
   ss.begin(); 
