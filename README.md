@@ -15,7 +15,7 @@ After following the first three steps below, please note that the image from ste
 called this way, it uses the default address 0x40
 
 ### Pixetto ss(A5,A4)
-Pixetto ss (A5, A4) is provided by the Pixelto software, the following are the use of the Pixelto software and the Arduino IDE
+Pixetto ss (A5, A4) is provided by the Pixelto software, and the following syntax uses for the Pixelto and Arduino IDE, respectively
 
 #### VIA Pixetto tile：
 ![png](sample_3.png)
